@@ -21,7 +21,8 @@
   display: inline-block; /* Display links as inline-block to make them spread horizontally */
   white-space: nowrap; /* Prevent text from wrapping */
   background-color: #cc171e; /*red button*/
-  border-radius: 5px;
+  border: 2px solid silver;
+  border-radius: 10px ;
   color: white;
   font-weight: bold;
   text-decoration: none;
@@ -60,7 +61,7 @@
     font-size: medium;
   }
   .navbar{
-  flex-direction:column;
+  flex-direction:column;/*align the items vertically*/
   padding: 0.5rem ;
   }
   .navbar-links{
