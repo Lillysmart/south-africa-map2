@@ -11,9 +11,11 @@ const NavBar = () => {
         <img src={logo} alt="Company Logo" className="logo" />
       </Link>
       {/* Navigation Links */}
+      <div className='navbar-links'> {/* Wrap the links */}
       <Link to="/" className="navbar-brand">Home</Link> {/* Adjusted link to root */}
       <Link to="/Map" className="navbar-link">SA Map Stats</Link>
       <Link to="/DataTable" className="navbar-link">Health Report</Link>
+      </div>
     </nav>
   );
 };
