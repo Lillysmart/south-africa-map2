@@ -1,7 +1,6 @@
 .navbar {
   display: flex; /* Maintain flexbox for layout */
-
-  justify-content: space-between; /* Distribute items horizontally */
+ justify-content: space-between; /* Distribute items horizontally */
   align-items: center; /* Maintain vertical centering */
   padding: 1rem;
   background: linear-gradient(
@@ -13,18 +12,23 @@
   box-shadow: 0 0 10px rgba(142, 123, 123, 0.5); /* More prominent shadow */
   font-family: "Montserrat", sans-serif; /* Modern font with some weight */
   text-shadow: 0 0 2px #cc171e; /* Inner shadow for text glow */
+ 
 }
 .navbar-links {
   display: flex;
 }
 
 .navbar-link {
-  color: white;
+  display: inline-block; /* Display links as inline-block to make them spread horizontally */
+  white-space: nowrap; /* Prevent text from wrapping */ 
+   color: white;
   font-weight: bold;
   text-decoration: none;
   margin-right: 1rem;
   transition: all 0.3s ease-in-out; /* Smooth transition on hover */
   position: relative; /* Needed for hover effects */
+  padding: 0 1rem; 
+ 
 }
 
 .navbar-link:hover {
@@ -49,5 +53,5 @@
 }
 
 .logo {
-  width: 25%;
+  width: 35%;
 }
