@@ -21,20 +21,22 @@
 .navbar-link {
   display: inline-block; /* Display links as inline-block to make them spread horizontally */
   white-space: nowrap; /* Prevent text from wrapping */ 
+ background-color: #cc171e; /*red button*/
+border-radius: 5px;
    color: white;
   font-weight: bold;
   text-decoration: none;
   margin-right: 1rem;
   transition: all 0.3s ease-in-out; /* Smooth transition on hover */
   position: relative; /* Needed for hover effects */
-  padding: 0 1rem; 
+ padding: 12px 24px;  
  
 }
 
 .navbar-link:hover {
-  color: #cc171e; /* Accent color on hover */
+  color:  #020101; /* Accent color on hover */
   transform: translateY(-2px); /* Slight upward movement on hover */
-  text-shadow: 0 0 5px #cc171e; /* Increase glow on hover */
+  text-shadow: 0 0 5px #d88d8d; /* Increase glow on hover */
 }
 
 .navbar::after {
@@ -53,5 +55,6 @@
 }
 
 .logo {
-  width: 35%;
+  width: 40%;
+ 
 }
