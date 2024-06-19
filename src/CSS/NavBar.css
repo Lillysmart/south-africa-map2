@@ -36,7 +36,7 @@ border-radius: 5px;
 .navbar-link:hover {
   color:  #020101; /* Accent color on hover */
   transform: translateY(-2px); /* Slight upward movement on hover */
-  text-shadow: 0 0 5px #d88d8d; /* Increase glow on hover */
+  text-shadow: 0 0 5px #dc3737; /* Increase glow on hover */
 }
 
 .navbar::after {
