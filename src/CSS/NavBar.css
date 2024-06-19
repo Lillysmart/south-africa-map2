@@ -15,10 +15,12 @@
  
   .navbar-link {
     color: white;
+    font-weight: bold;
     text-decoration: none;
     margin-right: 1rem;
     transition: all 0.3s ease-in-out; /* Smooth transition on hover */
     position: relative; /* Needed for hover effects */
+    display: flex;
     
   }
   
@@ -28,12 +30,7 @@
     text-shadow: 0 0 5px #cc171e; /* Increase glow on hover */
   }
   
-  .navbar-link {
-    font-weight: bold;
-    color: white;
-    display: flex;
-
-  }
+ 
   
   .navbar::after {
     content: "";
