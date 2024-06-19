@@ -60,14 +60,19 @@
     font-size: medium;
   }
   .navbar{
-    display: grid;
+  flex-direction:column;
+  padding: 0.5rem ;
   }
   .navbar-links{
-    display:flex ;
+     flex-direction:row ;
+     width: 100%;
   }
   .navbar-link{
     background: none;
-   padding: 10px;
+   padding: 1px;
+   margin-right: 0; /* Remove right margin */
+    width: 100%; /* Full width for links */
+    text-align: left; /* Align text to the left */
   }
   .navbar-link:hover {
     color: #e11717; /* Accent color on hover */
