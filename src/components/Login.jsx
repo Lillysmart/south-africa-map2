@@ -58,6 +58,14 @@ const Login = () => {
   const handleCloseModal = () => {
     setIsModalOpen(false);
   };
+  // Function to update username state based on input value
+  const handleChangeUsername = (event) => {
+    setUsername(event.target.value); // Update username state with input value
+  };
+
+  // Function to update password state based on input value
+  const handleChangePassword = (event) => {
+    setPassword(event.target.value); // Update password state with input value
   return (
     <>
       <button className="navbar-link" onClick={handleButtonClick}>
