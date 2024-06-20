@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
+import '../CSS/Modal.css';
 
 const Modal = ({ isOpen, onClose, children }) => {
   if (!isOpen) return null; // If the modal is not open, don't render anything (return null)
