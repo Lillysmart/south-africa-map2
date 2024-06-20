@@ -1,18 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Modal from "./Modal";
 import "../CSS/Login.css";
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(null);
+  const [error, setError] = useState(null); // State to hold error message
 
-  const [isModalOpen, setIsModalOpen] = useState(false); // this controls the visibility of the modal
+  const [isModalOpen, setIsModalOpen] = useState(false); // State to control modal visibility
 
+  // Function to handle form submission
   const handleSubmit = async (event) => {
     event.preventDefault(); // Prevent default form submission behavior
 
-    const data = { Username: username, Password: password }; // Form data to send to API
+    const data = { Username: 'DevUser', Password: 'Test@123' }; // Hardcoded username and password for testing
 
     try {
       // Sending a POST request to login API endpoint
@@ -51,15 +52,6 @@ const Login = () => {
     }
   };
 
-  //Event handler for when the "Login" button is clicked
-  const handleButtonClick = () => {
-    setIsModalOpen(true);
-  };
-
-  //Event handler for closing the modal
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
   // Function to update username state based on input value
   const handleChangeUsername = (event) => {
     setUsername(event.target.value); // Update username state with input value
@@ -68,38 +60,63 @@ const Login = () => {
   // Function to update password state based on input value
   const handleChangePassword = (event) => {
     setPassword(event.target.value); // Update password state with input value
-    return (
-      <>
-        <button className="navbar-link" onClick={handleButtonClick}>
-          Login
-        </button>
-        <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
-          <form>
-            <h2> Welcome! </h2>
-            <label for="Username">Username :</label>
-            <input
-              type="text"
-              id="username"
-              autoComplete="username"
-              value={username}
-              onChange={handleChangeUsername}
-            />
-            <br />
-            <label for="Password">Username :</label>
-            <input 
+  };
+
+  // Function to handle click event and open modal
+  const handleButtonClick = () => {
+    setIsModalOpen(true); // Set modal visibility to true
+  };
+
+  // Function to handle modal close event
+  const handleCloseModal = () => {
+    setIsModalOpen(false); // Set modal visibility to false
+  };
+
+  return (
+    <>
+      {/* Button to open login modal */}
+      <button className="navbar-link" onClick={handleButtonClick}>
+        Login
+      </button>
+
+      {/* Modal component for login form */}
+      <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
+        <form onSubmit={handleSubmit}>
+          <h2>Welcome!</h2>
+
+          {/* Username input */}
+          <label htmlFor="username">Username:</label>
+          <input
+            type="text"
+            id="username"
+            autoComplete="username"
+            value={username}
+            onChange={handleChangeUsername}
+          />
+          <br />
+
+          {/* Password input */}
+          <label htmlFor="password">Password:</label>
+          <input
             type="password"
             id="password"
             autoComplete="current-password"
             value={password}
-            onChange={handleChangePassword} />
-            <br />
-            <button className="login-btn" type="submit">
-              Login
-            </button>
-          </form>
-        </Modal>
-      </>
-    );
-  };
+            onChange={handleChangePassword}
+          />
+          <br />
+
+          {/* Submit button */}
+          <button className="login-btn" type="submit">
+            Login
+          </button>
+
+          {/* Display error message if login fails */}
+          {error && <p className="error-message">{error}</p>}
+        </form>
+      </Modal>
+    </>
+  );
 };
+
 export default Login;
