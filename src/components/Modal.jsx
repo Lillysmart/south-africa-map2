@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import '../CSS/Modal.css';
+import close from '../images/close.png'
 
 const Modal = ({ isOpen, onClose, children }) => {
   if (!isOpen) return null; // If the modal is not open, don't render anything (return null)
@@ -19,7 +20,8 @@ const Modal = ({ isOpen, onClose, children }) => {
           {children}
           
           {/* Button to close the modal */}
-          <button className="close-btn" onClick={onClose}>Close</button>
+          <img src={close} alt="Close-Modal" className="close-btn" onClick={onClose} />
+    
         </div>
       </div>
     </>,
