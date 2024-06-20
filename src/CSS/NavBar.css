@@ -31,6 +31,7 @@
   transition: all 0.3s ease-in-out; /* Smooth transition on hover */
   position: relative; /* Needed for hover effects */
   padding: 12px 24px;
+
 }
 
 .navbar-link:hover {
