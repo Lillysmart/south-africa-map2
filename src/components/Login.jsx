@@ -31,7 +31,7 @@ const Login = () => {
           <label for="Password">Username :</label>
           <input type="password" autoComplete="Password" value="Password" />
           <br/>
-          <button type="submit">Login</button>
+          < button className="login-btn" type="submit">Login</button>
         </form>
       </Modal>
     </>
