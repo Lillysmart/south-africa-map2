@@ -1,6 +1,6 @@
 import React,{useState, useEffect} from 'react';
 
-Const Login=()=>{
+const Login=()=>{
 
 }
 export default Login 
