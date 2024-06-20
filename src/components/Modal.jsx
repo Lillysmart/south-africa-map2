@@ -19,7 +19,7 @@ const Modal = ({ isOpen, onClose, children }) => {
           {children}
           
           {/* Button to close the modal */}
-          <button onClick={onClose}>Close</button>
+          <button className="close-btn" onClick={onClose}>Close</button>
         </div>
       </div>
     </>,
