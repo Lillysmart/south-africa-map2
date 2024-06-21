@@ -37,14 +37,15 @@ h1 {
 /* Styles for table headers and cells */
 .data-table th,
 .data-table td {
-  border: 1px solid #ddd; /* Add border for cells */
-  padding: 0.75rem 1rem; /* Increase padding for readability */
-  text-align: left; /* Align text to the left within cells */
-  white-space: wrap; /* Allow text to wrap within cells */
-  word-wrap: break-word;
+  border: 1px solid #ddd;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  white-space: nowrap; /* Allow text to wrap */
+  word-wrap: break-word; /* Break words if necessary */
   max-width: 120px; /* Adjust max-width as needed */
-  max-height: 200px; /* Adjust max-height as needed */
+  max-height: 100px; /* Adjust max-height as needed */
   overflow: hidden; /* Hide overflow if content exceeds max height */
+  text-overflow: ellipsis; /* Show ellipsis (...) for text that overflows */
 }
 
 .data-table th {
@@ -61,3 +62,18 @@ tbody tr:nth-child(even) {
 tbody tr:hover {
   background-color: #ebeef0; /* Change background color on hover */
 }
+
+
+  @media (max-width: 768px) {
+    .data-table th,
+    .data-table td {
+      border: 1px solid #ddd;
+      padding: 0.75rem 0.5rem; /* Reduce horizontal padding */
+      text-align: left;
+      white-space: nowrap; /* Prevent text wrapping */
+      overflow: hidden; /* Hide overflow if content exceeds max height */
+      text-overflow: ellipsis; /* Show ellipsis (...) for text that overflows */
+      max-width: 120px; /* Adjust max-width as needed */
+      max-height: 100px; /* Adjust max-height as needed */
+    }
+  }
