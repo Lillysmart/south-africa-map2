@@ -32,13 +32,16 @@ const tableData = {
 };
 
 const DataTable = () => {
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [tableData, setTableData] = useState({});
   const [selectedTable, setSelectedTable] = useState('Corporate_1'); // Initial selected table
 
   const handleTableChange = (event) => {
     setSelectedTable(event.target.value);
   };
 
-  const currentTableData = tableData[selectedTable];
+  const currentTableData = tableData[selectedTable] || {};
 
   const tableHeaders = Object.keys(currentTableData);
 
