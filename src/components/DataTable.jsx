@@ -1,35 +1,6 @@
 import React, { useState , useEffect } from 'react';
 import '../CSS/Table.css'
 
-const tableData = {
-  Corporate_1: {
-    number_of_vendors: 0,
-    active_bees: 0,
-    expired_bees: 0,
-    active_tccs: 0,
-    expired_tccs: 0,
-    active_workman_comp: 0,
-    expired_workman_comp: 0,
-  },
-  Corporate_2: {
-    number_of_vendors: 0, 
-    active_bees: 0,
-    expired_bees: 0,
-    active_tccs: 0,
-    expired_tccs: 0,
-    active_workman_comp: 0,
-    expired_workman_comp: 0,
-  },
-  Corporate_3: {
-    number_of_vendors: 0, 
-    active_bees: 0,
-    expired_bees: 0,
-    active_tccs: 0,
-    expired_tccs: 0,
-    active_workman_comp: 0,
-    expired_workman_comp: 0,
-  },
-}
 
 const DataTable = () => {
   const [loading, setLoading] = useState(true);
@@ -75,9 +46,10 @@ useEffect( ()=>{
   const handleTableChange = (event) => {
     setSelectedTable(event.target.value);
   };
-
+ // Get the data for the currently selected table
   const currentTableData = tableData[selectedTable] || {};
 
+   // Get the headers for the table
   const tableHeaders = Object.keys(currentTableData);
 
   return (
