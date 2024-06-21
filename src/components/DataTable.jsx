@@ -70,7 +70,7 @@ const DataTable = ({ token }) => {
 
   return (
     <div className="data-container">
-      <h1>{selectedTable}</h1> {/* Dynamically update heading */}
+      <h1> Corporate {selectedTable}</h1> {/* Dynamically update heading */}
       <select value={selectedTable} onChange={handleTableChange} className="dropdown">
         {/* Generate dropdown options based on fetched table data */}
         {Object.keys(tableData).map((corporate) => (
