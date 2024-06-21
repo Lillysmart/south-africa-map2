@@ -67,16 +67,18 @@ const DataTable = ({ token }) => {
   if (error) {
     return <div>Error: Failed to load data</div>; // Display error message if data fetch fails
   }
+   // Extract the numeric index from selectedTable
+   const selectedIndex = parseInt(selectedTable.split('_')[1], 10);
 
   return (
     <div className="data-container">
-      <h1> Corporate {selectedTable}</h1> {/* Dynamically update heading */}
-      <select value={selectedTable} onChange={handleTableChange} className="dropdown">
+            <h1> Corporate {/* Dynamically update heading */}
+            <select value={selectedTable} onChange={handleTableChange} className="dropdown">
         {/* Generate dropdown options based on fetched table data */}
-        {Object.keys(tableData).map((corporate) => (
-          <option key={corporate} value={corporate}>{corporate}</option>
+        {Object.keys(tableData).map((corporate , index) => (
+          <option key={corporate} value={corporate}>{`${index + 1}`}</option>
         ))}
-      </select>
+      </select></h1>
       <br></br>
      <div className="data-table"></div>
       <table className="data-table">
