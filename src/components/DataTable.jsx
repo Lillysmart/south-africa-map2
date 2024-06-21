@@ -6,6 +6,8 @@ const DataTable = ({ token }) => {
   const [error, setError] = useState(null);
   const [tableData, setTableData] = useState({});
   const [selectedTable, setSelectedTable] = useState('Corporate_1'); // Initial selected table
+  const [currentPage, setCurrentPage] = useState(1);
+  const rowsPerPage = 10;
 
   // Function to fetch table data from the API
   const fetchTableData = async () => {
@@ -47,6 +49,10 @@ const DataTable = ({ token }) => {
   const handleTableChange = (event) => {
     setSelectedTable(event.target.value);
   };
+  // Function to handle pagination
+  const handlePageChange = (newPage) => {
+    setCurrentPage(newPage);
+  };
 
   // Get the data for the currently selected table
   const currentTableData = tableData[selectedTable] || {};
@@ -72,7 +78,8 @@ const DataTable = ({ token }) => {
         ))}
       </select>
       <br></br>
-      <table>
+     <div className="data-table"></div>
+      <table className="data-table">
         <thead>
           <tr>
             {/* Generate table headers */}
@@ -90,6 +97,7 @@ const DataTable = ({ token }) => {
           </tr>
         </tbody>
       </table>
+      <div/>
     </div>
   );
 };
